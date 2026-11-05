@@ -29,7 +29,8 @@ accident. See `references/operations.md`.
 
 ## The order of operations
 
-Do these in order. Skipping step 2 or 3 makes step 4 fail.
+Read the assignment before editing and claim the paths you need. Managed workers
+already have a registered worktree; external workers must register theirs.
 
 **1. Read your context first.**
 
@@ -45,8 +46,9 @@ not replace it. A constraint like "never export email addresses" applies to you
 even when your assignment is only "write the CSV writer". Page with the returned
 `next` cursor.
 
-**2. Register your workspace.** The runtime allocates your worktree; you declare it
-before editing.
+**2. Use your assigned workspace.** Horde allocates and registers a managed
+worker's worktree before launch. Do not register it again. An external agent or
+script attaching to a task must register its own separate worktree before editing:
 
 ```
 register_workspace { "path": "/abs/path/to/worktree", "branch": "...", "base": "..." }

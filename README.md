@@ -13,7 +13,7 @@ npx skills add asomervell/horde-skills
 | --- | --- |
 | **`horde`** | An agent using Horde. Why it exists and when not to use it, installation, MCP wiring, the submit and monitor loop, answering questions, collecting results, crash recovery. References cover setup, configuration, tasks, delegation, app environments, GitHub delivery, networking and managed runtimes, and the complete operation API. |
 | **`horde-templates`** | Authoring the versioned TOML workflow templates Horde compiles into a task graph: step fields, substitution, parallel write scopes, bounded repair loops, nested templates, role fallback. |
-| **`horde-worker`** | An agent running inside a Horde task: read context first, register a workspace, claim paths before writing, exchange mail, raise durable questions, record artifacts, delegate within bounds. |
+| **`horde-worker`** | An agent running inside a Horde task: read context first, use the assigned workspace, claim paths before writing, exchange mail, raise durable questions, record artifacts, delegate within bounds. |
 
 Install one of them on its own:
 

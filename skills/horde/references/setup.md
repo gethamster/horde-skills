@@ -19,12 +19,9 @@ when that is writable, otherwise it adds `~/.local/bin` to your shell startup fi
 and tells you to open a new terminal. Versioned executables live under
 `~/.local/share/horde-install`.
 
-Pass `--service` or `--no-service` whenever an agent runs the installer. With
-neither flag the boot-service choice defaults to `ask`, and the prompt is not
-skipped just because stdin is a pipe: the script falls back to writing the
-question to `/dev/tty` and reading the answer from it. Under `curl | bash` in an
-agent tool call that blocks until a human types into the terminal, or until the
-call times out. With an explicit flag the prompt is never reached.
+Pass `--service` or `--no-service` whenever an agent runs the installer so the
+requested scope is explicit. Interactive installation asks about boot startup;
+without a terminal, the installer skips the service unless `--service` is supplied.
 
 Pinned to a version, or downloaded first so you can read it:
 
