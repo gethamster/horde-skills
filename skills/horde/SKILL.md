@@ -71,11 +71,9 @@ confirm with the user first. Requires macOS or Linux and Git.
 curl -fsSL https://horde.sh/install | bash -s -- --no-service
 ```
 
-`--no-service` matters. Without an explicit `--service` or `--no-service` the
-installer asks whether to start Horde at login, and that prompt falls back to
-reading `/dev/tty` when stdin is not a terminal, which is exactly what
-`curl | bash` is. An agent tool call blocks there with no way to answer. Pass the
-flag and the question never happens.
+Use `--no-service` to keep boot-service installation outside this setup step.
+Interactive installation asks about boot startup; without a terminal, the
+installer skips the service unless `--service` is supplied.
 
 Boot startup stays a separate, reversible step the user opts into later:
 
